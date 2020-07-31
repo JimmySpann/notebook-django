@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="post">
+        {% if note.date_created %}
+            <div class="date">
+                {{ note.date_created }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'note_edit' note.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h2>{{ note.title }}</h2>
+        <p>{{ note.body|linebreaksbr }}</p>
+    </div>
+
+{% endblock %}
